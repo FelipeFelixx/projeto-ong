@@ -10,6 +10,24 @@
     --sucesso: #4a9f6b;
     --amarelo: #e4ad3f;
     --sombra: 0 8px 24px rgba(31, 55, 70, 0.08);
+
+    /* Escala tipográfica do Design System */
+    --texto-xs: 0.875rem;
+    --texto-sm: 0.95rem;
+    --texto-md: 1rem;
+    --texto-lg: 1.2rem;
+    --texto-xl: 1.65rem;
+    --texto-xxl: 2.2rem;
+
+    /* Escala modular de espaçamentos */
+    --espaco-1: 4px;
+    --espaco-2: 8px;
+    --espaco-3: 12px;
+    --espaco-4: 16px;
+    --espaco-5: 24px;
+    --espaco-6: 32px;
+    --espaco-7: 48px;
+    --espaco-8: 64px;
 }
 
 * {
@@ -48,7 +66,7 @@ header {
 
 .logo {
     color: var(--azul-escuro);
-    font-size: 1.35rem;
+    font-size: var(--texto-lg);
     font-weight: 700;
     text-decoration: none;
     white-space: nowrap;
@@ -66,7 +84,7 @@ nav a {
     text-decoration: none;
     padding: 8px 12px;
     border-radius: 6px;
-    font-size: 0.95rem;
+    font-size: var(--texto-sm);
 }
 
 nav a:hover,
@@ -99,7 +117,7 @@ main {
 .hero p {
     margin: 0;
     max-width: 650px;
-    font-size: 1.2rem;
+    font-size: var(--texto-lg);
     opacity: 0.95;
 }
 
@@ -319,11 +337,11 @@ footer p {
     }
 
     .hero h1 {
-        font-size: 2.2rem;
+        font-size: var(--texto-xxl);
     }
 
     .hero p {
-        font-size: 1rem;
+        font-size: var(--texto-md);
     }
 
     .formulario {
@@ -363,7 +381,7 @@ footer p {
 }
 
 .pagina-inicial .secao h2 {
-    font-size: 1.65rem;
+    font-size: var(--texto-xl);
     margin-bottom: 8px;
 }
 
@@ -440,7 +458,7 @@ footer p {
     }
 
     .pagina-inicial .hero p {
-        font-size: 1rem;
+        font-size: var(--texto-md);
     }
 
     .pagina-inicial .card-destaque img {
@@ -479,7 +497,7 @@ footer p {
 
 /* Títulos das seções */
 .secao h2 {
-    font-size: 1.65rem;
+    font-size: var(--texto-xl);
     line-height: 1.2;
 }
 
@@ -492,7 +510,7 @@ nav {
 }
 
 nav a {
-    font-size: 0.95rem;
+    font-size: var(--texto-sm);
     padding: 8px 12px;
 }
 
@@ -536,7 +554,7 @@ footer {
     }
 
     .hero p {
-        font-size: 1rem;
+        font-size: var(--texto-md);
     }
 }
 
@@ -555,7 +573,7 @@ footer {
 }
 
 .formulario legend {
-    font-size: 1rem;
+    font-size: var(--texto-md);
 }
 
 .formulario .campo {
@@ -585,3 +603,297 @@ footer {
     }
 }
 
+
+
+/* =========================================================
+   NAVEGAÇÃO INTERATIVA E RESPONSIVA
+   ========================================================= */
+
+.menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    padding: 8px;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    background: var(--branco);
+    cursor: pointer;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--azul-escuro);
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.menu-toggle:hover {
+    background: var(--azul-claro);
+}
+
+.menu-toggle:focus-visible,
+.dropdown-toggle:focus-visible,
+nav a:focus-visible {
+    outline: 3px solid rgba(47, 131, 189, 0.25);
+    outline-offset: 2px;
+}
+
+.menu-dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    color: var(--texto);
+    background: transparent;
+    border: 0;
+    border-radius: 6px;
+
+    padding: 8px 12px;
+
+    font: inherit;
+    font-size: var(--texto-sm);
+
+    cursor: pointer;
+}
+
+.dropdown-toggle:hover,
+.dropdown-toggle[aria-expanded="true"] {
+    background: var(--azul-claro);
+    color: var(--azul-escuro);
+}
+
+.dropdown-seta {
+    font-size: 0.9rem;
+    transition: transform 0.2s ease;
+}
+
+.dropdown-toggle[aria-expanded="true"] .dropdown-seta {
+    transform: rotate(180deg);
+}
+
+.submenu {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+
+    min-width: 210px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 8px;
+
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    pointer-events: none;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+
+    z-index: 20;
+}
+
+.menu-dropdown.dropdown-aberto .submenu,
+.menu-dropdown:focus-within .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.submenu a {
+    display: block;
+    width: 100%;
+    padding: 9px 12px;
+    border-radius: 6px;
+    color: var(--texto);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.submenu a:hover,
+.submenu a.ativo {
+    background: var(--azul-claro);
+    color: var(--azul-escuro);
+}
+
+
+/* =========================================================
+   MENU MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .header-conteudo {
+        position: relative;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    header nav {
+        position: absolute;
+        top: calc(100% + 1px);
+        left: 0;
+        right: 0;
+
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+
+        padding: 12px 24px;
+
+        background: var(--branco);
+        border-bottom: 1px solid var(--borda);
+        box-shadow: var(--sombra);
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        pointer-events: none;
+
+        transition:
+            opacity 0.2s ease,
+            transform 0.2s ease,
+            visibility 0.2s ease;
+    }
+
+    header nav.menu-aberto {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    header nav > a,
+    .dropdown-toggle {
+        width: 100%;
+        min-height: 44px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 10px 12px;
+    }
+
+    .menu-dropdown {
+        width: 100%;
+    }
+
+    .submenu {
+        position: static;
+
+        width: 100%;
+        min-width: 0;
+
+        margin-top: 4px;
+        padding: 4px 0 4px 16px;
+
+        border: 0;
+        border-left: 2px solid var(--azul-claro);
+        border-radius: 0;
+
+        box-shadow: none;
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4px);
+        pointer-events: none;
+
+        max-height: 0;
+        overflow: hidden;
+
+        transition:
+            opacity 0.2s ease,
+            transform 0.2s ease,
+            max-height 0.25s ease,
+            visibility 0.2s ease;
+    }
+
+    .menu-dropdown.dropdown-aberto .submenu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+        max-height: 300px;
+    }
+
+    .submenu a {
+        min-height: 42px;
+        display: flex;
+        align-items: center;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+}
+
+
+/* =========================================================
+   AJUSTES PARA TELAS MUITO PEQUENAS
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+    header nav {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .menu-toggle {
+        width: 42px;
+        height: 42px;
+    }
+}
+
+
+/* Respeita usuários que preferem menos movimento */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .menu-toggle span,
+    .dropdown-seta,
+    .submenu,
+    header nav {
+        transition: none;
+    }
+}

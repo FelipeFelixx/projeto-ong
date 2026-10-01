@@ -15,13 +15,60 @@
 
 <header>
     <div class="header-conteudo">
-        <a class="logo" href="index.html">ONG Ações Sociais</a>
 
-        <nav aria-label="Navegação principal">
-            <a href="index.html">Início</a>
-            <a href="projetos.html">Projetos sociais</a>
-            <a class="ativo" href="cadastro.html">Seja apoiador</a>
+        <a class="logo" href="index.html">
+            ONG Ações Sociais
+        </a>
+
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="navegacao-principal"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav
+            id="navegacao-principal"
+            aria-label="Navegação principal"
+        >
+            <a href="index.html">
+                Início
+            </a>
+
+            <div class="menu-dropdown">
+                <button
+                    class="dropdown-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="submenu-projetos"
+                >
+                    Projetos sociais
+                    <span class="dropdown-seta" aria-hidden="true">⌄</span>
+                </button>
+
+                <div class="submenu" id="submenu-projetos">
+                    <a href="projetos.html#acoes-sociais">
+                        Ações sociais
+                    </a>
+                    <a href="projetos.html#doacoes">
+                        Doações
+                    </a>
+                    <a href="projetos.html#voluntariado">
+                        Voluntariado
+                    </a>
+                </div>
+            </div>
+
+            <a class="ativo" href="cadastro.html">
+                Seja apoiador
+            </a>
         </nav>
+
     </div>
 </header>
 
@@ -180,5 +227,6 @@
     </div>
 </footer>
 
+    <script src="/js/script.js"></script>
 </body>
 </html>

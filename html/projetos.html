@@ -12,13 +12,60 @@
 
 <header>
     <div class="header-conteudo">
-        <a class="logo" href="index.html">ONG Ações Sociais</a>
 
-        <nav aria-label="Navegação principal">
-            <a href="index.html">Início</a>
-            <a class="ativo" href="projetos.html">Projetos sociais</a>
-            <a href="cadastro.html">Seja apoiador</a>
+        <a class="logo" href="index.html">
+            ONG Ações Sociais
+        </a>
+
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="navegacao-principal"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav
+            id="navegacao-principal"
+            aria-label="Navegação principal"
+        >
+            <a href="index.html">
+                Início
+            </a>
+
+            <div class="menu-dropdown">
+                <button
+                    class="dropdown-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="submenu-projetos"
+                >
+                    Projetos sociais
+                    <span class="dropdown-seta" aria-hidden="true">⌄</span>
+                </button>
+
+                <div class="submenu" id="submenu-projetos">
+                    <a class="ativo" href="projetos.html#acoes-sociais">
+                        Ações sociais
+                    </a>
+                    <a href="projetos.html#doacoes">
+                        Doações
+                    </a>
+                    <a href="projetos.html#voluntariado">
+                        Voluntariado
+                    </a>
+                </div>
+            </div>
+
+            <a href="cadastro.html">
+                Seja apoiador
+            </a>
         </nav>
+
     </div>
 </header>
 
@@ -40,7 +87,7 @@
 
         <div class="cards">
 
-            <article class="card">
+            <article class="card" id="acoes-sociais">
                 <img
                     src="/imagens/ong-acoes-sociais.png"
                     alt="Ilustração de pessoas participando de uma ação social"
@@ -60,7 +107,7 @@
                 </div>
             </article>
 
-            <article class="card">
+            <article class="card" id="doacoes">
                 <img
                     src="/imagens/ong-doacoes.jpg"
                     alt="Ilustração representando uma contribuição para projetos sociais"
@@ -80,7 +127,7 @@
                 </div>
             </article>
 
-            <article class="card">
+            <article class="card" id="voluntariado">
                 <img
                     src="/imagens/ong-voluntariado.jpg"
                     alt="Ilustração representando participação voluntária em uma ação social"
@@ -118,5 +165,6 @@
     </div>
 </footer>
 
+    <script src="/js/script.js"></script>
 </body>
 </html>
