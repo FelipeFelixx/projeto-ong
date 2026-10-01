@@ -1,0 +1,587 @@
+:root {
+    --azul: #2f83bd;
+    --azul-escuro: #1f628f;
+    --azul-claro: #eaf4fa;
+    --texto: #27333d;
+    --texto-suave: #5f6b73;
+    --branco: #ffffff;
+    --fundo: #f5f7f9;
+    --borda: #dce3e8;
+    --sucesso: #4a9f6b;
+    --amarelo: #e4ad3f;
+    --sombra: 0 8px 24px rgba(31, 55, 70, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--texto);
+    background: var(--fundo);
+    line-height: 1.6;
+}
+
+header {
+    background: var(--branco);
+    border-bottom: 1px solid var(--borda);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header-conteudo {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo {
+    color: var(--azul-escuro);
+    font-size: 1.35rem;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--texto);
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+nav a:hover,
+nav a.ativo {
+    background: var(--azul-claro);
+    color: var(--azul-escuro);
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 42px 24px 60px;
+}
+
+.hero {
+    background: var(--azul);
+    color: var(--branco);
+    border-radius: 12px;
+    padding: 58px 56px;
+    margin-bottom: 38px;
+    box-shadow: var(--sombra);
+}
+
+.hero h1 {
+    margin: 0 0 10px;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1.1;
+}
+
+.hero p {
+    margin: 0;
+    max-width: 650px;
+    font-size: 1.2rem;
+    opacity: 0.95;
+}
+
+.secao {
+    margin-bottom: 42px;
+}
+
+.secao h2 {
+    margin: 0 0 12px;
+    font-size: 1.8rem;
+}
+
+.secao-introducao {
+    color: var(--texto-suave);
+    max-width: 750px;
+    margin-bottom: 24px;
+}
+
+.card-destaque {
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--sombra);
+}
+
+.card-destaque img {
+    display: block;
+    width: 100%;
+    max-height: 360px;
+    object-fit: cover;
+}
+
+.card-conteudo {
+    padding: 26px;
+}
+
+.card-conteudo h2 {
+    margin-top: 0;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.card {
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--sombra);
+}
+
+.card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-conteudo {
+    padding: 22px;
+}
+
+.card h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: var(--texto-suave);
+}
+
+.lista {
+    padding-left: 20px;
+    color: var(--texto-suave);
+}
+
+.botao {
+    display: inline-block;
+    background: var(--azul);
+    color: var(--branco);
+    text-decoration: none;
+    border: 0;
+    border-radius: 7px;
+    padding: 10px 18px;
+    font: inherit;
+    cursor: pointer;
+}
+
+.botao:hover {
+    background: var(--azul-escuro);
+}
+
+.contato {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 18px;
+}
+
+.contato-item {
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.contato-item strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contato-item span {
+    color: var(--texto-suave);
+}
+
+.formulario {
+    max-width: 780px;
+    margin: 0 auto;
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: var(--sombra);
+}
+
+.formulario fieldset {
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    margin: 0 0 24px;
+    padding: 20px;
+}
+
+.formulario legend {
+    padding: 0 8px;
+    font-weight: 700;
+    color: var(--azul-escuro);
+}
+
+.campo {
+    margin-bottom: 18px;
+}
+
+.campo:last-child {
+    margin-bottom: 0;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.campo input {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #cbd5dc;
+    border-radius: 6px;
+    font: inherit;
+    color: var(--texto);
+    background: var(--branco);
+}
+
+.campo input:focus {
+    outline: 2px solid rgba(47, 131, 189, 0.2);
+    border-color: var(--azul);
+}
+
+footer {
+    background: #202c35;
+    color: #dce4e9;
+    padding: 28px 24px;
+}
+
+.footer-conteudo {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 800px) {
+    .header-conteudo {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .contato {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 40px 28px;
+    }
+}
+
+@media (max-width: 500px) {
+    main {
+        padding: 28px 16px 45px;
+    }
+
+    .hero {
+        padding: 32px 22px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .formulario {
+        padding: 20px;
+    }
+
+    nav {
+        width: 100%;
+    }
+}
+
+/* =========================================================
+   AJUSTES DA PÁGINA INICIAL
+   ========================================================= */
+
+.pagina-inicial main {
+    padding-top: 28px;
+    padding-bottom: 36px;
+}
+
+.pagina-inicial .hero {
+    padding: 42px 48px;
+    margin-bottom: 28px;
+}
+
+.pagina-inicial .hero h1 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.pagina-inicial .hero p {
+    font-size: 1.05rem;
+    max-width: 700px;
+}
+
+.pagina-inicial .secao {
+    margin-bottom: 28px;
+}
+
+.pagina-inicial .secao h2 {
+    font-size: 1.65rem;
+    margin-bottom: 8px;
+}
+
+.pagina-inicial .secao-introducao {
+    margin-bottom: 16px;
+}
+
+.pagina-inicial .card-destaque {
+    display: grid;
+    grid-template-columns: 42% 58%;
+    min-height: 280px;
+}
+
+.pagina-inicial .card-destaque img {
+    width: 100%;
+    height: 100%;
+    min-height: 280px;
+    max-height: none;
+    object-fit: cover;
+}
+
+.pagina-inicial .card-destaque .card-conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+}
+
+.pagina-inicial .card-destaque .card-conteudo h2 {
+    margin-bottom: 10px;
+}
+
+.pagina-inicial .card-destaque .card-conteudo p {
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+.pagina-inicial .contato {
+    gap: 14px;
+}
+
+.pagina-inicial .contato-item {
+    padding: 16px 18px;
+}
+
+@media (max-width: 800px) {
+
+    .pagina-inicial .card-destaque {
+        grid-template-columns: 1fr;
+    }
+
+    .pagina-inicial .card-destaque img {
+        height: 240px;
+        min-height: 240px;
+    }
+
+    .pagina-inicial .card-destaque .card-conteudo {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .pagina-inicial main {
+        padding-top: 20px;
+    }
+
+    .pagina-inicial .hero {
+        padding: 32px 22px;
+    }
+
+    .pagina-inicial .hero h1 {
+        font-size: 2rem;
+    }
+
+    .pagina-inicial .hero p {
+        font-size: 1rem;
+    }
+
+    .pagina-inicial .card-destaque img {
+        height: 210px;
+        min-height: 210px;
+    }
+
+    .pagina-inicial .card-destaque .card-conteudo {
+        padding: 20px;
+    }
+}
+
+
+/* =========================================================
+   PADRÃO VISUAL GLOBAL DO PROJETO
+   ========================================================= */
+
+/* Hero padronizado em todas as páginas */
+.hero {
+    padding: 42px 48px;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    margin: 0 0 10px;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.1;
+}
+
+.hero p {
+    margin: 0;
+    max-width: 720px;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+/* Títulos das seções */
+.secao h2 {
+    font-size: 1.65rem;
+    line-height: 1.2;
+}
+
+/* Navegação padronizada */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    font-size: 0.95rem;
+    padding: 8px 12px;
+}
+
+/* Conteúdo principal */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 24px 48px;
+}
+
+/* Rodapé */
+footer {
+    margin-top: 0;
+}
+
+/* Responsividade */
+@media (max-width: 800px) {
+
+    .hero {
+        padding: 38px 30px;
+    }
+
+    .hero h1 {
+        font-size: 2.6rem;
+    }
+}
+
+@media (max-width: 500px) {
+
+    main {
+        padding: 24px 16px 40px;
+    }
+
+    .hero {
+        padding: 30px 22px;
+        margin-bottom: 24px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+
+/* =========================================================
+   AJUSTE DA PÁGINA DE CADASTRO
+   ========================================================= */
+
+.formulario {
+    max-width: 760px;
+}
+
+.formulario fieldset {
+    margin-bottom: 18px;
+    padding: 16px 20px;
+}
+
+.formulario legend {
+    font-size: 1rem;
+}
+
+.formulario .campo {
+    margin-bottom: 13px;
+}
+
+.formulario .campo:last-child {
+    margin-bottom: 0;
+}
+
+.formulario .campo label {
+    margin-bottom: 4px;
+}
+
+.formulario .campo input {
+    padding: 9px 11px;
+}
+
+@media (max-width: 500px) {
+    .formulario {
+        padding: 20px;
+    }
+
+    .formulario fieldset {
+        padding: 15px;
+        margin-bottom: 16px;
+    }
+}
+
