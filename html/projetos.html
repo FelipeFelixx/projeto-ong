@@ -73,7 +73,9 @@
 
     <section class="hero">
         <h1>Projetos sociais</h1>
-        <p>Conheça algumas formas de participar e contribuir com nossas iniciativas.</p>
+        <p>
+            Conheça algumas formas de participar e contribuir com nossas iniciativas.
+        </p>
     </section>
 
     <section class="secao">
@@ -85,6 +87,14 @@
             com você.
         </p>
 
+        <div
+            class="alerta alerta-info"
+            role="status"
+        >
+            <strong>Informação:</strong>
+            escolha uma das iniciativas abaixo para conhecer as formas de participação.
+        </div>
+
         <div class="cards">
 
             <article class="card" id="acoes-sociais">
@@ -94,16 +104,29 @@
                 >
 
                 <div class="card-conteudo">
-                    <h3>Ações sociais</h3>
+
+                    <div class="card-cabecalho">
+                        <h3>Ações sociais</h3>
+                        <span class="badge badge-info">Ação social</span>
+                    </div>
 
                     <p>
                         Participe das iniciativas realizadas para apoiar
                         pessoas e fortalecer a comunidade.
                     </p>
 
+                    <button
+                        class="botao botao-secundario"
+                        type="button"
+                        data-toast="Você selecionou Ações sociais."
+                    >
+                        Ver interesse
+                    </button>
+
                     <a class="botao" href="cadastro.html">
                         Participar
                     </a>
+
                 </div>
             </article>
 
@@ -114,16 +137,29 @@
                 >
 
                 <div class="card-conteudo">
-                    <h3>Doações</h3>
+
+                    <div class="card-cabecalho">
+                        <h3>Doações</h3>
+                        <span class="badge badge-sucesso">Contribuição</span>
+                    </div>
 
                     <p>
                         As contribuições ajudam a manter as atividades
                         sociais e ampliar o atendimento dos projetos.
                     </p>
 
+                    <button
+                        class="botao botao-secundario"
+                        type="button"
+                        data-toast="Você selecionou Doações."
+                    >
+                        Ver interesse
+                    </button>
+
                     <a class="botao" href="cadastro.html">
                         Quero contribuir
                     </a>
+
                 </div>
             </article>
 
@@ -134,7 +170,11 @@
                 >
 
                 <div class="card-conteudo">
-                    <h3>Voluntariado</h3>
+
+                    <div class="card-cabecalho">
+                        <h3>Voluntariado</h3>
+                        <span class="badge badge-alerta">Voluntariado</span>
+                    </div>
 
                     <p>
                         Pessoas interessadas podem colaborar nas atividades
@@ -147,9 +187,18 @@
                         <li>Atividades da organização</li>
                     </ul>
 
+                    <button
+                        class="botao botao-secundario"
+                        type="button"
+                        data-modal-voluntariado
+                    >
+                        Mais informações
+                    </button>
+
                     <a class="botao" href="cadastro.html">
                         Quero ser voluntário
                     </a>
+
                 </div>
             </article>
 
@@ -158,6 +207,65 @@
 
 </main>
 
+<div
+    class="toast"
+    id="projeto-toast"
+    role="status"
+    aria-live="polite"
+    aria-hidden="true"
+>
+    <strong>Ação registrada.</strong>
+    <span id="projeto-toast-text"></span>
+</div>
+
+<div
+    class="modal-overlay"
+    id="voluntariado-modal"
+    aria-hidden="true"
+>
+    <div
+        class="modal-feedback"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="titulo-modal-voluntariado"
+    >
+
+        <div class="modal-cabecalho">
+
+            <h2 id="titulo-modal-voluntariado">
+                Voluntariado
+            </h2>
+
+            <button
+                class="modal-fechar"
+                type="button"
+                id="fechar-modal-voluntariado"
+                aria-label="Fechar informações sobre voluntariado"
+            >
+                ×
+            </button>
+
+        </div>
+
+        <p>
+            O voluntariado permite colaborar nas atividades da organização
+            de acordo com as necessidades apresentadas pelos projetos.
+        </p>
+
+        <div class="modal-acoes">
+
+            <a
+                class="botao"
+                href="cadastro.html"
+            >
+                Quero ser voluntário
+            </a>
+
+        </div>
+
+    </div>
+</div>
+
 <footer>
     <div class="footer-conteudo">
         <p>&copy; 2026 ONG Ações Sociais</p>
@@ -165,6 +273,7 @@
     </div>
 </footer>
 
-    <script src="/js/script.js"></script>
+<script src="/js/script.js"></script>
+
 </body>
 </html>
