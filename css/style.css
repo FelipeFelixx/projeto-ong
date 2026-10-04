@@ -1271,3 +1271,51 @@ nav a:focus-visible {
     border-color: #b8ddc5;
     color: #32734b;
 }
+
+/* =========================================================
+   ESTRUTURA RESPONSIVA — ATIVIDADE ACADÊMICA
+   CSS Grid: 12 colunas
+   Breakpoints: 1200px / 1024px / 768px / 576px / 400px
+   ========================================================= */
+
+.layout-grid-12 {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: var(--espaco-5);
+}
+
+/* Breakpoint 1 — desktop */
+@media (max-width: 1200px) {
+    .layout-grid-12 {
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+}
+
+/* Breakpoint 2 — notebook/tablet horizontal */
+@media (max-width: 1024px) {
+    .layout-grid-12 {
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+}
+
+/* Breakpoint 3 — tablet */
+@media (max-width: 768px) {
+    .layout-grid-12 {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+}
+
+/* Breakpoint 4 — celular */
+@media (max-width: 576px) {
+    .layout-grid-12 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+/* Breakpoint 5 — celular pequeno */
+@media (max-width: 400px) {
+    .layout-grid-12 {
+        grid-template-columns: 1fr;
+    }
+}
+
